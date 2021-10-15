@@ -1,6 +1,7 @@
 const countriesEl = document.getElementById('countries');
 const toggleBtn = document.getElementById('toggle');
 const filterBtn = document.getElementById('filter');
+const searchEl = document.getElementById('search');
 
 getCountries();
 
@@ -51,4 +52,18 @@ toggleBtn.addEventListener('click', () => {
 // show and hide the filters (li tags)
 filterBtn.addEventListener('click', () => {
 	filterBtn.classList.toggle('open');
+});
+
+searchEl.addEventListener('input', e => {
+	const { value } = e.target;
+	const countryName = document.querySelectorAll('.country-name');
+
+	countryName.forEach(name => {
+		if (name.innerText.toLowerCase().includes(value.toLowerCase())) {
+			// .card -> .card-body -> .country-name
+			name.parentElement.parentElement.style.display = 'block';
+		} else {
+			name.parentElement.parentElement.style.display = 'none';
+		}
+	});
 });
