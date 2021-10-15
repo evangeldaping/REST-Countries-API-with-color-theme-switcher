@@ -1,5 +1,6 @@
 const countriesEl = document.getElementById('countries');
 const toggleBtn = document.getElementById('toggle');
+const filterBtn = document.getElementById('filter');
 
 getCountries();
 
@@ -45,4 +46,9 @@ function displayCountries(countries) {
 // toggle theme - dark & light
 toggleBtn.addEventListener('click', () => {
 	document.body.classList.toggle('dark');
+});
+
+// show and hide the filters (li tags)
+filterBtn.addEventListener('click', () => {
+	filterBtn.classList.toggle('open');
 });
