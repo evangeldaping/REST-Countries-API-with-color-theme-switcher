@@ -2,6 +2,7 @@ const countriesEl = document.getElementById('countries');
 const toggleBtn = document.getElementById('toggle');
 const filterBtn = document.getElementById('filter');
 const searchEl = document.getElementById('search');
+const regionFilters = filterBtn.querySelectorAll('li');
 
 getCountries();
 
@@ -65,5 +66,22 @@ searchEl.addEventListener('input', e => {
 		} else {
 			name.parentElement.parentElement.style.display = 'none';
 		}
+	});
+});
+
+// add a filter on the li's inside the .dropdown
+regionFilters.forEach(filter => {
+	filter.addEventListener('click', () => {
+		const value = filter.innerText;
+		const countryRegion = document.querySelectorAll('.country-region');
+
+		countryRegion.forEach(region => {
+			if (region.innerText.includes(value) || value === 'All') {
+				// .card -> .card-body -> .country-region
+				region.parentElement.parentElement.style.display = 'block';
+			} else {
+				region.parentElement.parentElement.style.display = 'none';
+			}
+		});
 	});
 });
