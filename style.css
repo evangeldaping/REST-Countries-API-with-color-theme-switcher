@@ -38,8 +38,15 @@ h1 {
 
 /* Theme button styling */
 .btn-toggle {
+    background-color: var(--backgroundColor);
     border: none;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-size: 16px;
+    width: 120px;
 }
 
 .btn-toggle .fas {
@@ -65,4 +72,41 @@ body.dark .btn-toggle .far {
     font-size: 14px;
     padding: 20px;
     min-width: 300px;
+}
+
+/* Dropdown styling  */
+.dropdown {
+    border-radius: 4px;
+    background-color: var(--backgroundColor);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    font-size: 14px;
+    padding: 20px;
+    position: relative;
+}
+
+.dropdown .fa-chevron-down {
+    margin-left: 10px;
+}
+
+.dropdown ul {
+    border-radius: 4px;
+    background-color: var(--backgroundColor);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
+    display: none;
+    padding: 20px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style-type: none;
+    width: 100%;
+    z-index: 99;
+}
+
+.dropdown.open ul {
+    display: block;
+}
+
+.dropdown ul li {
+    margin: 10px 0;
 }
