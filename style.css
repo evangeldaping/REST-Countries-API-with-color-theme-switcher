@@ -1,0 +1,36 @@
+@import url("https://fonts.google.com/specimen/Nunito+Sans");
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --backgroundColor: hsl(0, 0%, 100%);
+    --body: hsl(0, 0%, 98%);
+}
+
+body {
+    background-color: var(--body);
+    font-family: "Nunito Sans", sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: var(--backgroundColor);
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1440px;
+    padding: 30px;
+}
+
+h1 {
+    margin: 0;
+}
