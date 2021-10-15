@@ -1,4 +1,5 @@
 const countriesEl = document.getElementById('countries');
+const toggleBtn = document.getElementById('toggle');
 
 getCountries();
 
@@ -40,3 +41,8 @@ function displayCountries(countries) {
 		countriesEl.appendChild(countryEl);
 	});
 }
+
+// toggle theme - dark & light
+toggleBtn.addEventListener('click', () => {
+	document.body.classList.toggle('dark');
+});
