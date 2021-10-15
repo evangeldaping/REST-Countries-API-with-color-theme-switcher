@@ -34,3 +34,20 @@ img {
 h1 {
     margin: 0;
 }
+
+.btn-dark-mode {
+    border: none;
+    font-size: 16px;
+}
+
+.btn-dark-mode .fas {
+    display: none;
+}
+
+body.dark .btn-dark-mode .fas {
+    display: inline;
+}
+
+body.dark .btn-dark-mode .far {
+    display: none;
+}
